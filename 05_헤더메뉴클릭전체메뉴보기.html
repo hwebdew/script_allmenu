@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'GmarketSansMedium';
+            color: #333;
+        }
+        .header {
+            height: 100px;
+            border-bottom: 1px solid #333;
+            position: relative;
+        }
+
+        .header .inner {
+            width: calc(100% - 200px);
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .header .inner h1 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .header .inner .menu_open {}
+
+        .header .inner .menu_open img {
+            height: 20px;
+        }
+
+        .header .inner .gnb {
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            top: 120px;
+            transform: translateX(-50%);
+            padding: 50px 100px;
+            background-color: black;
+            border-radius: 20px;
+
+            display: none;
+        }
+
+        .header .inner .gnb>ul {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+
+
+        }
+
+        .header .inner .gnb>ul>li {
+            color: #fff;
+
+            margin-bottom: 30px;
+            padding: 0 30px 30px;
+            border-bottom: 1px solid #ffffff5d;
+            display: flex;
+        }
+
+        .header .inner .gnb>ul>li>a {
+            font-size: 32px;
+            width: 20%;
+        }
+
+        .header .inner .gnb>ul>li .depth02 {
+            display: flex;
+            align-items: center;
+            column-gap: 30px;
+        }
+
+        .header .inner .gnb>ul>li .depth02 li {
+            font-size: 18px;
+            color: #ffffffd5;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const menuBtn = document.getElementsByClassName('menu_open')[0];
+            const gnbWrap = document.getElementById('gnb');
+
+            // gnbWrap.style.display = 'none';
+            //getComputedStyle(gnbWrap).display
+            menuBtn.addEventListener('click', () => {
+                if(getComputedStyle(gnbWrap).display === 'none') {
+                    gnbWrap.style.display = 'block';
+                } else {
+                    gnbWrap.style.display = 'none';
+                }
+            });//menuBtn.click()
+
+            
+        }//script end
+    </script>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="inner">
+            <h1>logo</h1>
+            <div class="menu_open">
+                <img src="img/icon-menu.svg" alt="메뉴보기">
+            </div>
+            <nav class="gnb" id="gnb">
+                <ul>
+                    <li>
+                        <a href="#">포토샵</a>
+                        <ul class="depth02">
+                            <li><a href="#">펜툴</a></li>
+                            <li><a href="#">색상보정</a></li>
+                            <li><a href="#">합성</a></li>
+                            <li><a href="#">텍스트</a></li>
+                            <li><a href="#">도형</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li><a href="#">일러스트</a></li>
+                    <li><a href="#">피그마</a></li>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JS</a></li>
+
+                </ul>
+            </nav>
+        </div><!-- .inner end -->
+    </header><!-- .header end -->
+</body>
+
+</html>
